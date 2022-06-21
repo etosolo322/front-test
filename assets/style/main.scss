@@ -1,8 +1,16 @@
+$adaptive: 450px;
 main{
     width: 1570px;
     max-width: 100%;
     margin-top: 80px;
     display: flex;
+    @media screen and (max-width:$adaptive){
+       width: 100vw;
+       max-width: 100vw;
+       flex-direction: column-reverse;
+       align-items: center;
+       margin-top: 0px;
+    }
     .bullet{
         position: relative; 
         width: 225px;
@@ -53,6 +61,13 @@ main{
     .text{
         width: 728px;
         margin-left: 71px;
+        @media screen and (max-width:$adaptive){
+            margin-left: 0px;
+            width: 90%;
+            max-width: 100vw;
+            display: flex;
+            flex-direction: column;            
+         }
         &_sell{
             font-style: normal;
             font-weight: 300;
@@ -63,6 +78,13 @@ main{
             span{
                 font-weight: 600; 
             }
+            @media screen and (max-width:$adaptive){
+                text-align: center;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 30px;
+                order:1;
+             }
         }
         &_montage{  
             display: inline-block;          
@@ -77,10 +99,23 @@ main{
             span{
                 margin-left: 16px;
             }
+            @media screen and (max-width:$adaptive){
+                text-align: center;
+                font-size: 13px;
+                line-height: 16px;
+                order:2;
+                span{
+                    margin-left: 6px;
+                }
+             }
         }
         &_buttons{
             display: flex;
             margin-bottom: 38px;
+            @media screen and (max-width:$adaptive){
+                flex-direction: column;
+                order: 4;
+             }
             &_calc{
                 height: 100px;
                 width: 375px;            
@@ -102,18 +137,36 @@ main{
                     color: #FFFFFF;
                     margin-right: 31px;
                 }
+                @media screen and (max-width:$adaptive){
+                    height: 60px;
+                    width: 100%;
+                    padding: 0;
+                    span{
+                        font-weight: 600;
+                        font-size: 10px;
+                        line-height: 16px;
+                    }
+                 }
             }
             &_write{
                 @extend .text_buttons_calc;
                 background: #F38120;
                 width:335px;
                 margin-left: 18px;
+                @media screen and (max-width:$adaptive){
+                    margin-left: 0px;
+                    width: 100%;                   
+                 }
             }
         }
         &_ask{
             display: flex;
             flex-direction: row;
-            
+            @media screen and (max-width:$adaptive){
+                flex-direction: column;
+                align-items: center;
+               order:3;               
+             }
             p{
                 margin: 0 ;
                 padding-left: 16px;
